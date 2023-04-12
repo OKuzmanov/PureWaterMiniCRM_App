@@ -191,10 +191,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteAllTestUsers() {
+    public void deleteObsoleteTestUsers() {
         List<UserEntity> allTestUsers = this.userRepo.findAllTestUsers();
 
-        if (allTestUsers.size() == 0) {
+        if (allTestUsers.size() <= 8) {
             return;
         }
 

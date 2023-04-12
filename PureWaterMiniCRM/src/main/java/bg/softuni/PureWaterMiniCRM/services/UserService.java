@@ -41,5 +41,5 @@ public interface UserService {
 
     boolean isUserAuthorized(PureWaterUserDetails userDetails, Long userId);
 
-    void deleteAllTestUsers();
+    void deleteObsoleteTestUsers();
 }

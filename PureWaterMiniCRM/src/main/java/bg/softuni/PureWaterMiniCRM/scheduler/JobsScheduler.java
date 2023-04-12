@@ -33,9 +33,9 @@ public class JobsScheduler {
     }
 
     @Scheduled(timeUnit = TimeUnit.MINUTES, fixedDelay = 1, initialDelay = 0)
-    public void deleteTestUsers() {
+    public void deleteObsoleteTestUsers() {
 
-        this.userService.deleteAllTestUsers();
+        this.userService.deleteObsoleteTestUsers();
 
     }
 }
