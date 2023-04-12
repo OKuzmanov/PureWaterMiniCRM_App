@@ -189,4 +189,20 @@ public class UserServiceImpl implements UserService {
 
         return isAdmin;
     }
+
+    @Override
+    public void deleteAllTestUsers() {
+        List<UserEntity> allTestUsers = this.userRepo.findAllTestUsers();
+
+        if (allTestUsers.size() == 0) {
+            return;
+        }
+
+        for (UserEntity user:
+             allTestUsers) {
+            user.setIsDeleted(true);
+
+            this.userRepo.save(user);
+        }
+    }
 }

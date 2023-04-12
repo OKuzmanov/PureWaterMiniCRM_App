@@ -17,4 +17,7 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     @Query("FROM UserEntity ORDER BY orders.size DESC, username ASC")
     List<UserEntity> findAllSortedByOrders();
+
+    @Query("FROM UserEntity WHERE id not in (1, 2, 3) AND is_deleted = 0")
+    List<UserEntity> findAllTestUsers();
 }

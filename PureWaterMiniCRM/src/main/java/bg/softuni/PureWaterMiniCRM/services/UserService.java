@@ -40,4 +40,6 @@ public interface UserService {
     boolean deleteUser(Long id);
 
     boolean isUserAuthorized(PureWaterUserDetails userDetails, Long userId);
+
+    void deleteAllTestUsers();
 }
